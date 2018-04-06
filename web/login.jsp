@@ -10,20 +10,19 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Happy Journey</title>
+        <title>Easy Tour Bangladesh</title>
     </head>
     <body background="https://brightcove04pmdo-a.akamaihd.net/5104226627001/5104226627001_5240580206001_5212829389001-vs.jpg?pubId=5104226627001&videoId=5212829389001">
         
         <br>
-        <h1 align="center"><font face="Tahoma" size=36 color="#5ef26d">Welcome to "Happy Journey"</font></h1>
+        <h1 align="center"><font face="Tahoma" size=36 color="#5ef26d">Welcome to "Easy Tour Bangladesh"</font></h1>
         <div>
             <form action="Login" onsubmit="return validation()" method="POST">
         <br>
         <br>
         <br>
-        <br>
         <table border="0" align="center">
-            <caption><h1><font face="Tahoma" size=36>Login Here</font></h1></caption>
+            <caption><h1><font face="Tahoma" size="24" align="center">Login Here</font></h1></caption>
         
                 <tr>
                     <td><b>Email Address</b></td>
