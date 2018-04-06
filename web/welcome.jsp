@@ -11,8 +11,10 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Welcome</title>
     </head>
-    <body>
-        <h1 align="center">Happy Journey</h1>
+    <body background="https://www.chobirdokan.com/wp-content/uploads/Nilgiri-Hill-Resort-Bandarban-Bangladesh.jpg?92dbd0&92dbd0">
+        
+        <h1 align="center"><font color="green" size="42"> Easy Tour Bangladesh</font></h1>
+    
         <%
         response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
         response.setHeader("Progma", "no-cache");
@@ -32,9 +34,10 @@ You are not logged in<br/>
 <%} else {
 %>
 Welcome <%=session.getAttribute("email")%>
-<a href='logout.jsp' align="right">Log out</a>
+
 <%
     }
 %>
+<div align="left"> <a href='logout.jsp'>Log out</a></div>
     </body>
 </html>
