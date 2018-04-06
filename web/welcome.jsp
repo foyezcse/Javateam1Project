@@ -32,7 +32,7 @@ You are not logged in<br/>
 <%} else {
 %>
 Welcome <%=session.getAttribute("email")%>
-<a href='logout.jsp'>Log out</a>
+<a href='logout.jsp' align="right">Log out</a>
 <%
     }
 %>
