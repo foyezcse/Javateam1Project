@@ -1,3 +1,4 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%-- 
     Document   : welcome
     Created on : Mar 27, 2018, 4:23:53 PM
@@ -39,5 +40,96 @@ Welcome <%=session.getAttribute("email")%>
     }
 %>
 <div align="left"> <a href='logout.jsp'>Log out</a></div>
+<form name="details" action="detailscheck" method="POST">
+    <div>
+        <h1>Input your current Position: From where you wanna start your Journey-</h1>   
+    Your Division :<select name="division">
+        <option>Dhaka</option>
+        <option>Rajshahi</option>
+        <option>Chottogram</option>
+        <option>Sylhet</option>
+        <option>Rangpur</option>
+        <option>Barishal</option>
+        <option>Mymenshing</option>
+        <option>Khulna</option>
+    </select>
+    Your District :<select name="districts">
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+    </select>
+    <h1>Where do you wanna go(Input the details):</h1>
+    Destination : <textarea name="destination" rows="6" cols="20">
+    </textarea>
+    </div>
+    <input type="submit" value="Search Possible Way to Travel" name="search" />
+    
+
+</form>
     </body>
 </html>
