@@ -16,6 +16,14 @@
         <servlet-name>About</servlet-name>
         <servlet-class>com.happyjourney.view.About</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DetailsView</servlet-name>
+        <servlet-class>com.happyjourney.view.DetailsView</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DetailsCheck</servlet-name>
+        <servlet-class>com.happyjourney.controller.DetailsCheck</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>RegistrationValidate</servlet-name>
         <url-pattern>/RegistrationValidate</url-pattern>
@@ -31,6 +39,14 @@
     <servlet-mapping>
         <servlet-name>About</servlet-name>
         <url-pattern>/About</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DetailsView</servlet-name>
+        <url-pattern>/detailsview</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DetailsCheck</servlet-name>
+        <url-pattern>/detailscheck</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
