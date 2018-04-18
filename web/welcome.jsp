@@ -1,4 +1,4 @@
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <%-- 
     Document   : welcome
     Created on : Mar 27, 2018, 4:23:53 PM
@@ -9,10 +9,26 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Welcome</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+        
     </head>
-    <body background="https://www.chobirdokan.com/wp-content/uploads/Nilgiri-Hill-Resort-Bandarban-Bangladesh.jpg?92dbd0&92dbd0">
+    <body background="">
         
         <h1 align="center"><font color="green" size="42"> Easy Tour Bangladesh</font></h1>
     
@@ -43,86 +59,54 @@ Welcome <%=session.getAttribute("email")%>
 <form name="details" action="detailscheck" method="POST">
     <div>
         <h1>Input your current Position: From where you wanna start your Journey-</h1>   
-    Your Division :<select name="division">
-        <option>Dhaka</option>
-        <option>Rajshahi</option>
-        <option>Chottogram</option>
-        <option>Sylhet</option>
-        <option>Rangpur</option>
-        <option>Barishal</option>
-        <option>Mymenshing</option>
-        <option>Khulna</option>
-    </select>
-    Your District :<select name="districts">
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-    </select>
+    </div>
+    <div id="map" style="width:100%;height:400px;"> Your area map</div>
+    <script>
+      // Note: This example requires that you consent to location sharing when
+      // prompted by your browser. If you see the error "The Geolocation service
+      // failed.", it means you probably did not give permission for the browser to
+      // locate you.
+      var map, infoWindow;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 6
+        });
+        infoWindow = new google.maps.InfoWindow;
+
+        // Try HTML5 geolocation.
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+
+            infoWindow.setPosition(pos);
+            infoWindow.setContent('Location found.');
+            infoWindow.open(map);
+            map.setCenter(pos);
+          }, function() {
+            handleLocationError(true, infoWindow, map.getCenter());
+          });
+        } else {
+          // Browser doesn't support Geolocation
+          handleLocationError(false, infoWindow, map.getCenter());
+        }
+      }
+
+      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+                              'Error: The Geolocation service failed.' :
+                              'Error: Your browser doesn\'t support geolocation.');
+        infoWindow.open(map);
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZ62yod17ldbTocks-8FsNhjiMwYyCs8A&callback=initMap">
+    </script>
+    <div>
     <h1>Where do you wanna go(Input the details):</h1>
     Destination : <textarea name="destination" rows="6" cols="20">
     </textarea>
