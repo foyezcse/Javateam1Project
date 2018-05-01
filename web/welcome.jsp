@@ -108,8 +108,8 @@ Welcome <%=session.getAttribute("email")%>
     </script>
     <div>
     <h1>Where do you wanna go(Input the details):</h1>
-    Destination : <textarea name="destination" rows="6" cols="20">
-    </textarea>
+    From : <input type="text" name="place1" value="" />
+    TO   :<input type="text" name="place2" value="" />
     </div>
     <input type="submit" value="Search Possible Way to Travel" name="search" />
     
